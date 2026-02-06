@@ -1,5 +1,5 @@
 import fs from "node:fs";
-import { Tanterem } from "./Tanterem.ts";
+import { Tanterem } from "../Classes/Tanterem.ts";
 import chalk from "chalk";
 export const beolvasas = async function (fajlnev: string): Promise<any> {
     const beolvasasPromise = new Promise((resolve, reject) => {

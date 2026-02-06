@@ -1,7 +1,6 @@
 import readline from 'readline';
 import fs from 'node:fs'
 import { beolvasas } from './beolvasas.ts'
-import chalk from 'chalk';
 
 const readInput = function () {
     const rl = readline.createInterface({
@@ -35,15 +34,15 @@ const writeArray2Txt = function (arr: number[]) {
     arr.forEach(element => {
         arrText += `${element}\n`;
     });
-    fs.writeFileSync('magassagok.txt', arrText);
+    fs.writeFileSync('./Docs/magassagok.txt', arrText);
 };
 
 const printOutCSV = async function () {
-    const arr = await beolvasas('./petrik-termek.csv');
+    const arr = await beolvasas('./Docs/petrik-termek.csv');
     arr.forEach((element: any) => {
         console.log(element.toString());
     });
 };
 
-// readInput();
+readInput();
 printOutCSV()
