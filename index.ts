@@ -1,5 +1,5 @@
 import readline from 'readline';
-import { getParsedCommandLineOfConfigFile } from 'typescript';
+import fs from 'node:fs'
 
 const readInput = function () {
     const rl = readline.createInterface({
@@ -18,9 +18,22 @@ const readInput = function () {
 };
 
 const fillArray = function (length: number) {
+    const magassagok = [];
     for (let i = 0; i < length; i++) {
-        console.log(i)
+        const magassag = Math.floor(Math.random()*50)+150;
+        magassagok.push(magassag);
     };
+    magassagok.sort((a, b) => a - b);
+    console.log(magassagok);
+    writeArray2Txt(magassagok);
+};
+
+const writeArray2Txt = function (arr: number[]) {
+    let arrText = '';
+    arr.forEach(element => {
+        arrText += `${element}\n`;
+    });
+    fs.writeFileSync('magassagok.txt', arrText);
 };
 
 readInput();
