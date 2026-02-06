@@ -1,6 +1,6 @@
 import readline from 'readline';
 import fs from 'node:fs'
-import {beolvasas} from './beolvasas.ts'
+import { beolvasas } from './beolvasas.ts'
 
 const readInput = function () {
     const rl = readline.createInterface({
@@ -21,7 +21,7 @@ const readInput = function () {
 const fillArray = function (length: number) {
     const magassagok = [];
     for (let i = 0; i < length; i++) {
-        const magassag = Math.floor(Math.random()*50)+150;
+        const magassag = Math.floor(Math.random() * 50) + 150;
         magassagok.push(magassag);
     };
     magassagok.sort((a, b) => a - b);
@@ -37,5 +37,12 @@ const writeArray2Txt = function (arr: number[]) {
     fs.writeFileSync('magassagok.txt', arrText);
 };
 
+const printOutCSV = async function () {
+    const arr = await beolvasas('./petrik-termek.csv');
+    arr.forEach((element: any) => {
+        console.log(element.toString());
+    });
+};
+
 // readInput();
-beolvasas('./petrik-termek.csv')
+printOutCSV()
