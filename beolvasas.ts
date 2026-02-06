@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import { Tanterem } from "./Tanterem.ts";
+import chalk from "chalk";
 export const beolvasas = async function (fajlnev: string): Promise<any> {
     const beolvasasPromise = new Promise((resolve, reject) => {
         try {
@@ -12,10 +13,10 @@ export const beolvasas = async function (fajlnev: string): Promise<any> {
                 const sorszam = element.split(';')[1];
                 const osztaly = element.split(';')[2];
                 arr.push(new Tanterem(epulet, Number(sorszam), osztaly));
-            };
+            };console.log()
             resolve(arr);
         } catch (err: any) {
-            reject(err);
+            reject(new Error(chalk.red(err)));
         };
     });
     return beolvasasPromise;

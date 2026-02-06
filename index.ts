@@ -1,6 +1,7 @@
 import readline from 'readline';
 import fs from 'node:fs'
 import { beolvasas } from './beolvasas.ts'
+import chalk from 'chalk';
 
 const readInput = function () {
     const rl = readline.createInterface({
