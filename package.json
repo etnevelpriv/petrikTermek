@@ -4,9 +4,15 @@
   "description": "",
   "license": "ISC",
   "author": "etnevelpriv",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.1"
+  },
+  "dependencies": {
+    "typescript": "^5.9.3"
   }
 }
