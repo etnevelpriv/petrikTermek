@@ -1,5 +1,6 @@
 import readline from 'readline';
 import fs from 'node:fs'
+import {beolvasas} from './beolvasas.ts'
 
 const readInput = function () {
     const rl = readline.createInterface({
@@ -36,4 +37,5 @@ const writeArray2Txt = function (arr: number[]) {
     fs.writeFileSync('magassagok.txt', arrText);
 };
 
-readInput();
+// readInput();
+beolvasas('./petrik-termek.csv')
